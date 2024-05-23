@@ -34,3 +34,5 @@ WORKDIR   /opt/robotframework/tests
 
 
 # docker container run -it --rm -v "$(pwd)/tests:/opt/robotframework/tests" -v "$(pwd)/results:/opt/robotframework/results"  robot  bash -c "robot --outputdir /opt/robotframework/results  /opt/robotframework/tests && /opt/robotframework/tests/common/rename_video.sh"
+
+# docker container run -it --rm -v "$(pwd)/tests:/opt/robotframework/tests" -v "$(pwd)/results:/opt/robotframework/results"  robot  bash -c "/opt/robotframework/tests/common/create_folder.sh  &&   /opt/robotframework/tests/common/execute_robot.sh   &&    /opt/robotframework/tests/common/rename_video.sh"

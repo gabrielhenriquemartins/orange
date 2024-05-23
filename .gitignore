@@ -28,6 +28,8 @@ wp-config.php
 
 # Uploads
 /wp-content/uploads/
+/results
+/archieve
 
 # Log files
 *.log
