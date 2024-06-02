@@ -1,6 +1,7 @@
 *** Settings ***
 Resource   ../resources/12 - buzz/kw_buzz.robot
-Suite Setup      Get Element    ${profile_photo}
+Resource   ../resources/common.robot
+Suite Setup      Open Left Menu    Buzz
 
 
 *** Test Cases ***

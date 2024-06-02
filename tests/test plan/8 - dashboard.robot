@@ -1,7 +1,7 @@
 *** Settings ***
 Resource   ../resources/8 - dashboard/kw_dashboard.robot
-Suite Setup      Get Element    ${profile_photo}
-Suite Teardown   Close Browser
+Resource   ../resources/common.robot
+Suite Setup    Open Left Menu   Dashboard
 
 *** Test Cases ***
 Test1: Dashboard - Check If the main seven dashboards exists

@@ -4,7 +4,6 @@ Resource   ../../common/variable_and_library/common.robot
 *** Keywords ***
 Write and Post
     [Arguments]    ${message}
-    Click    //span[@class='oxd-text oxd-text--span oxd-main-menu-item--name' and text()='Buzz']
     Click    ${tx_area}
     Fill Text    ${tx_area}    ${message}
     Click    ${bt_submit}
