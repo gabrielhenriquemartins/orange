@@ -4,7 +4,7 @@ Suite Setup      Get Element    ${profile_photo}
 Suite Teardown   Close Browser
 
 *** Test Cases ***
-Test1: Check If the main seven dashboards exists
+Test1: Dashboard - Check If the main seven dashboards exists
     Check If Dashboard Time at Work exists
     Check If Dashboard My Actions exists
     Check If Dashboard Quick Launch exists

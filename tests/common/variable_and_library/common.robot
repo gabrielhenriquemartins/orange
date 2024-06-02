@@ -10,6 +10,8 @@ Library    ../date_helper.py    WITH NAME    DateHelper
 ${username}      input[name="username"]
 ${password}      input[name="password"]
 ${bt_submit}     button[type="submit"]
+${tx_area}       textarea[placeholder="What's on your mind?"]
+
 ${invalid_credential_field}     //*[@class="oxd-text oxd-text--p oxd-alert-content-text"]
 ${invalid_credential_msg}       Invalid credentials
 ${username_required}            (//*[@class="oxd-input-group oxd-input-field-bottom-space"])[1]//*[@class="oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message"]

@@ -1,12 +1,11 @@
 *** Settings ***
 Resource   ../../common/variable_and_library/common.robot
 
-
 *** Keywords ***
 Open Orange Home Page
     Close Browser
     ${current_date}=    Get Current Date
-    New Browser    chromium    headless=Yes
+    New Browser    chromium    headless=Yes  
     New Context    recordVideo={'dir': '${VIDEO_DIR}${current_date}'}
     Set Browser Timeout    60s
     New Page    https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
