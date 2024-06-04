@@ -7,6 +7,7 @@ Suite Setup      Open Left Menu    Buzz
 *** Test Cases ***
 Test1: Buzz - Post a Message
     Write and Post    message=Hello There
+    Check Toast Message    Successfully Saved
 Test2: Buzz - Check Published Message
     Check Published Message    message=Hello There
 Test3: Buzz - Like a Message

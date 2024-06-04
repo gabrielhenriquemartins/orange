@@ -13,9 +13,9 @@ Check Published Message
     Get Element States    //*[@class="oxd-text oxd-text--p orangehrm-buzz-post-body-text" and text()="${message}"]
 
 React to the first Message with a Heart
-    wait until keyword Succeeds   5x  2s   Get Text and Should be Equal    (//*[@class="oxd-text oxd-text--p"])[1]    0 Likes
-    Click    (//*[@id="heart-svg"])[1]   
-    wait until keyword Succeeds   5x  2s   Get Text and Should be Equal    (//*[@class="oxd-text oxd-text--p orangehrm-buzz-stats-active"])[1]    1 Like
+    wait until keyword Succeeds   5x  2s   Get Text and Should be Equal    ${without_likes}    0 Likes
+    Click    ${heart_button}
+    wait until keyword Succeeds   5x  2s   Get Text and Should be Equal    ${with_likes}    1 Like
 
 Get Text and Should be Equal
     [Arguments]     ${selector}    ${message}

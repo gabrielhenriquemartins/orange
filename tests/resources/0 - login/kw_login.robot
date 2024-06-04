@@ -8,9 +8,9 @@ Open Orange Home Page
     New Browser    chromium    headless=Yes  
     New Context    recordVideo={'dir': '${VIDEO_DIR}${current_date}'}
     Set Browser Timeout    60s
-    New Page    https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+    New Page       ${URL}
     Get Title    ==    OrangeHRM
-    
+      
 
 Invalid Login
     Reload
@@ -19,22 +19,22 @@ Invalid Login
     Fill Text    ${username}    ${random_username}
     Fill Text    ${password}    ${random_password}
     Click    ${bt_submit}
-    ${msg}   Get Text    ${invalid_credential_field}
+    ${msg}   Get Text      ${invalid_credential_field}
     Should Be Equal As Strings    ${msg}    ${invalid_credential_msg}
 
 Password Required
     Reload
-    ${random_username}     Generate Random String     length=8
+    ${random_username}          Generate Random String     length=8
     Fill Text    ${username}    ${random_username}
-    Click    ${bt_submit}
-    ${msg}   Get Text    ${password_required}
-    Should Be Equal As Strings    ${msg}    ${required_msg}
+    Click        ${bt_submit}
+    ${msg}   Get Text           ${password_required}
+    Should Be Equal As Strings  ${msg}    ${required_msg}
 
 Username Required
     Reload
     ${random_password}     Generate Random String     length=8
     Fill Text    ${password}    ${random_password}
-    Click    ${bt_submit}
+    Click        ${bt_submit}
     ${msg}   Get Text    ${username_required}
     Should Be Equal As Strings    ${msg}    ${required_msg}
 
@@ -68,7 +68,7 @@ Check Forgot Password
     Should Be Equal As Strings    ${msg}    ${reset_password_msg_2}
     ${msg}   Get Text    ${reset_password_3}
     Should Be Equal As Strings    ${msg}    ${reset_password_msg_3}
-    Go To    https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+    Go To    ${URL}
 
 Login With the User Admin
     Reload
