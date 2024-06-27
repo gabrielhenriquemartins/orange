@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.10.12 on linux)" generated="2024-05-23T11:59:23.964942" rpa="false" schemaversion="5">
+<suite id="s1" name="Tests" source="/opt/robotframework/tests">
+<suite id="s1-s1" name="Test Plan" source="/opt/robotframework/tests/test plan">
+<suite id="s1-s1-s1" name="1 - Pipeline Login" source="/opt/robotframework/tests/test plan/1 - pipeline_login.robot">
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn" type="SETUP">
+<kw name="Open Orange Home Page" owner="kw_login">
+<kw name="Close Browser" owner="Browser">
+<msg time="2024-05-23T11:59:24.604574" level="INFO">Starting Browser process /usr/local/lib/python3.10/dist-packages/Browser/wrapper/index.js using port 51979</msg>
+<msg time="2024-05-23T11:59:24.604725" level="INFO">Node startup parameters: ['node', '/usr/local/lib/python3.10/dist-packages/Browser/wrapper/index.js', '51979']</msg>
+<msg time="2024-05-23T11:59:25.044300" level="INFO">No browser open, doing nothing</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-23T11:59:24.600765" elapsed="0.443767"/>
+</kw>
+<kw name="Get Current Date" owner="DateHelper">
+<msg time="2024-05-23T11:59:25.045178" level="INFO">${current_date} = 2024-05-23</msg>
+<var>${current_date}</var>
+<status status="PASS" start="2024-05-23T11:59:25.044873" elapsed="0.000340"/>
+</kw>
+<kw name="New Browser" owner="Browser">
+<msg time="2024-05-23T11:59:25.046206" level="INFO">{"browser": "chromium", "headless": true, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "/opt/robotframework/results/2024-05-23/browser/traces/e3f96ab3-e956-44b6-ae16-696b922b9052"}</msg>
+<msg time="2024-05-23T11:59:25.312343" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":true,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"/opt/robotframework/results/2024-05-23/browser/traces/e3f96ab3-e956-44b6-ae16-696b922b9052"}</msg>
+<arg>chromium</arg>
+<arg>headless=Yes</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-05-23T11:59:25.045428" elapsed="0.267466"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<msg time="2024-05-23T11:59:25.316732" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "recordVideo": {
+    "dir": "/opt/robotframework/results/2024-05-23",
+    "size": {
+      "height": 720,
+      "width": 1280
+    }
+  },
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "height": 720,
+    "width": 1280
+  }
+}</msg>
+<msg time="2024-05-23T11:59:25.344492" level="INFO">Successfully created context. </msg>
+<msg time="2024-05-23T11:59:25.344638" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'recordVideo': {'dir': '/opt/robotframework/results/2024-05-23', 'size': {'height': 720, 'width': 1280}}, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'height': 720, 'width': 1280}}</msg>
+<arg>recordVideo={'dir': '${VIDEO_DIR}${current_date}'}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2024-05-23T11:59:25.313477" elapsed="0.031403"/>
+</kw>
+<kw name="Set Browser Timeout" owner="Browser">
+<msg time="2024-05-23T11:59:25.352313" level="INFO">Set timeout to: 60000</msg>
+<arg>60s</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="PASS" start="2024-05-23T11:59:25.345402" elapsed="0.007157"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2024-05-23T11:59:28.144705" level="INFO">Successfully initialized new page object and opened url: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login</msg>
+<msg time="2024-05-23T11:59:28.145612" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;video width="1280" height="720" controls&gt;&lt;source src="c2c25fc6aa765b278fd31adee3c4e68f.webm" type="video/webm"&gt;&lt;/video&gt;</msg>
+<arg>https://opensource-demo.orangehrmlive.com/web/index.php/auth/login</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2024-05-23T11:59:25.352867" elapsed="2.793037"/>
+</kw>
+<kw name="Get Title" owner="Browser">
+<msg time="2024-05-23T11:59:28.157602" level="INFO">Title: 'OrangeHRM'</msg>
+<arg>==</arg>
+<arg>OrangeHRM</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2024-05-23T11:59:28.146232" elapsed="0.011622"/>
+</kw>
+<status status="PASS" start="2024-05-23T11:59:24.600214" elapsed="3.557914"/>
+</kw>
+<arg>5x</arg>
+<arg>2s</arg>
+<arg>Open Orange Home Page</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-05-23T11:59:24.599206" elapsed="3.559057"/>
+</kw>
+<test id="s1-s1-s1-t1" name="Test1: Check Invalid Credentials" line="6">
+<kw name="Invalid Login" owner="kw_login">
+<kw name="Reload" owner="Browser">
+<msg time="2024-05-23T11:59:28.671306" level="INFO">Reloaded page</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Reloads current active page.</doc>
+<status status="PASS" start="2024-05-23T11:59:28.159872" elapsed="0.511751"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2024-05-23T11:59:28.672614" level="INFO">${random_username} = lJabysMi</msg>
+<var>${random_username}</var>
+<arg>length=8</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2024-05-23T11:59:28.671981" elapsed="0.000685"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2024-05-23T11:59:28.673124" level="INFO">${random_password} = SCK2CwR7</msg>
+<var>${random_password}</var>
+<arg>length=8</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2024-05-23T11:59:28.672896" elapsed="0.000376"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-05-23T11:59:28.674028" level="INFO">Fills the text 'lJabysMi' in the given field.</msg>
+<arg>${username}</arg>
+<arg>${random_username}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:28.673454" elapsed="0.369093"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-05-23T11:59:29.044121" level="INFO">Fills the text 'SCK2CwR7' in the given field.</msg>
+<arg>${password}</arg>
+<arg>${random_password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:29.043140" elapsed="0.028282"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-05-23T11:59:29.072638" level="INFO">Clicks the element 'button[type="submit"]'.</msg>
+<arg>${bt_submit}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:29.071803" elapsed="0.738442"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2024-05-23T11:59:30.688831" level="INFO">Text: 'Invalid credentials'</msg>
+<msg time="2024-05-23T11:59:30.689118" level="INFO">${msg} = Invalid credentials</msg>
+<var>${msg}</var>
+<arg>${invalid_credential_field}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:29.810547" elapsed="0.878693"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${msg}</arg>
+<arg>${invalid_credential_msg}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-05-23T11:59:30.689529" elapsed="0.001108"/>
+</kw>
+<status status="PASS" start="2024-05-23T11:59:28.159205" elapsed="2.531546"/>
+</kw>
+<status status="PASS" start="2024-05-23T11:59:28.158435" elapsed="2.532557"/>
+</test>
+<test id="s1-s1-s1-t2" name="Test2: Check Required Username Message" line="9">
+<kw name="Username Required" owner="kw_login">
+<kw name="Reload" owner="Browser">
+<msg time="2024-05-23T11:59:31.112244" level="INFO">Reloaded page</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Reloads current active page.</doc>
+<status status="PASS" start="2024-05-23T11:59:30.697001" elapsed="0.415573"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2024-05-23T11:59:31.113522" level="INFO">${random_password} = mpjE1TE8</msg>
+<var>${random_password}</var>
+<arg>length=8</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2024-05-23T11:59:31.112979" elapsed="0.000577"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-05-23T11:59:31.114897" level="INFO">Fills the text 'mpjE1TE8' in the given field.</msg>
+<arg>${password}</arg>
+<arg>${random_password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:31.113772" elapsed="0.387761"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-05-23T11:59:31.503080" level="INFO">Clicks the element 'button[type="submit"]'.</msg>
+<arg>${bt_submit}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:31.501987" elapsed="0.059266"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2024-05-23T11:59:31.612033" level="INFO">Text: 'Required'</msg>
+<msg time="2024-05-23T11:59:31.612283" level="INFO">${msg} = Required</msg>
+<var>${msg}</var>
+<arg>${username_required}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:31.561680" elapsed="0.050635"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${msg}</arg>
+<arg>${required_msg}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-05-23T11:59:31.612627" elapsed="0.000328"/>
+</kw>
+<status status="PASS" start="2024-05-23T11:59:30.696216" elapsed="0.916832"/>
+</kw>
+<status status="PASS" start="2024-05-23T11:59:30.695412" elapsed="0.917930"/>
+</test>
+<test id="s1-s1-s1-t3" name="Test3: Check Required Password Message" line="12">
+<kw name="Password Required" owner="kw_login">
+<kw name="Reload" owner="Browser">
+<msg time="2024-05-23T11:59:32.036082" level="INFO">Reloaded page</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Reloads current active page.</doc>
+<status status="PASS" start="2024-05-23T11:59:31.622486" elapsed="0.413923"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2024-05-23T11:59:32.037515" level="INFO">${random_username} = bWV22e2C</msg>
+<var>${random_username}</var>
+<arg>length=8</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2024-05-23T11:59:32.036823" elapsed="0.000762"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-05-23T11:59:32.039108" level="INFO">Fills the text 'bWV22e2C' in the given field.</msg>
+<arg>${username}</arg>
+<arg>${random_username}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:32.038395" elapsed="0.832202"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-05-23T11:59:32.871642" level="INFO">Clicks the element 'button[type="submit"]'.</msg>
+<arg>${bt_submit}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:32.870917" elapsed="0.040461"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2024-05-23T11:59:32.964936" level="INFO">Text: 'Required'</msg>
+<msg time="2024-05-23T11:59:32.965176" level="INFO">${msg} = Required</msg>
+<var>${msg}</var>
+<arg>${password_required}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:32.911726" elapsed="0.053482"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${msg}</arg>
+<arg>${required_msg}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-05-23T11:59:32.965487" elapsed="0.000389"/>
+</kw>
+<status status="PASS" start="2024-05-23T11:59:31.620439" elapsed="1.345545"/>
+</kw>
+<status status="PASS" start="2024-05-23T11:59:31.618853" elapsed="1.347431"/>
+</test>
+<test id="s1-s1-s1-t4" name="Test4: Check Required Username and Password Message" line="15">
+<kw name="Username and Password Required" owner="kw_login">
+<kw name="Reload" owner="Browser">
+<msg time="2024-05-23T11:59:33.376177" level="INFO">Reloaded page</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Reloads current active page.</doc>
+<status status="PASS" start="2024-05-23T11:59:32.974820" elapsed="0.401613"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-05-23T11:59:33.377544" level="INFO">Clicks the element 'button[type="submit"]'.</msg>
+<arg>${bt_submit}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:33.376823" elapsed="0.388585"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2024-05-23T11:59:33.821012" level="INFO">Text: 'Required'</msg>
+<msg time="2024-05-23T11:59:33.821406" level="INFO">${msg} = Required</msg>
+<var>${msg}</var>
+<arg>${username_required}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:33.765794" elapsed="0.055652"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${msg}</arg>
+<arg>${required_msg}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-05-23T11:59:33.821820" elapsed="0.000480"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2024-05-23T11:59:33.863274" level="INFO">Text: 'Required'</msg>
+<msg time="2024-05-23T11:59:33.863848" level="INFO">${msg} = Required</msg>
+<var>${msg}</var>
+<arg>${password_required}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:33.822695" elapsed="0.041213"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${msg}</arg>
+<arg>${required_msg}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-05-23T11:59:33.864467" elapsed="0.000640"/>
+</kw>
+<status status="PASS" start="2024-05-23T11:59:32.973949" elapsed="0.891363"/>
+</kw>
+<status status="PASS" start="2024-05-23T11:59:32.972765" elapsed="0.893084"/>
+</test>
+<test id="s1-s1-s1-t5" name="Test5: Check Official Orange Home Page" line="18">
+<kw name="Check Orange HRM link" owner="kw_login">
+<kw name="Reload" owner="Browser">
+<msg time="2024-05-23T11:59:34.272519" level="INFO">Reloaded page</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Reloads current active page.</doc>
+<status status="PASS" start="2024-05-23T11:59:33.874357" elapsed="0.398729"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-05-23T11:59:34.274553" level="INFO">Clicks the element '//*[@href="http://www.orangehrm.com"]'.</msg>
+<arg>${orange_link}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:34.273611" elapsed="0.383134"/>
+</kw>
+<kw name="Switch Page" owner="Browser">
+<msg time="2024-05-23T11:59:34.660957" level="INFO">Switching to page NEW,context CURRENT, browser CURRENT</msg>
+<msg time="2024-05-23T11:59:36.587205" level="INFO">Activated new page page=9fc9094a-34a3-43d2-a3ce-3f463888e4e7</msg>
+<arg>NEW</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<status status="PASS" start="2024-05-23T11:59:34.658381" elapsed="1.929023"/>
+</kw>
+<kw name="Get Title" owner="Browser">
+<msg time="2024-05-23T11:59:36.598258" level="INFO">Title: 'Human Resources Management Software | OrangeHRM'</msg>
+<arg>==</arg>
+<arg>Human Resources Management Software | OrangeHRM</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2024-05-23T11:59:36.587781" elapsed="0.010626"/>
+</kw>
+<kw name="Close Page" owner="Browser">
+<msg time="2024-05-23T11:59:36.606491" level="INFO">Switching browser to CURRENT</msg>
+<msg time="2024-05-23T11:59:36.610898" level="INFO">Returned active browser id. CURRENT</msg>
+<msg time="2024-05-23T11:59:36.611766" level="INFO">Switching browser to browser=22d62dd1-99d8-4a01-8a8b-7dab0fc71068</msg>
+<msg time="2024-05-23T11:59:36.616083" level="INFO">Successfully changed active browser: browser=22d62dd1-99d8-4a01-8a8b-7dab0fc71068</msg>
+<msg time="2024-05-23T11:59:36.616253" level="INFO">Switching context to CURRENT in CURRENT</msg>
+<msg time="2024-05-23T11:59:36.620174" level="INFO">Returned active context id: CURRENT</msg>
+<msg time="2024-05-23T11:59:36.620369" level="INFO">Switching context to context=abd08c84-5400-410b-972b-f5f7d00be8e7 in CURRENT</msg>
+<msg time="2024-05-23T11:59:36.630151" level="INFO">Successfully changed active context: context=abd08c84-5400-410b-972b-f5f7d00be8e7</msg>
+<msg time="2024-05-23T11:59:36.641239" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the ``page`` in ``context`` in ``browser``.</doc>
+<status status="PASS" start="2024-05-23T11:59:36.598699" elapsed="0.042952"/>
+</kw>
+<kw name="Get Title" owner="Browser">
+<msg time="2024-05-23T11:59:36.648020" level="INFO">Title: 'OrangeHRM'</msg>
+<arg>==</arg>
+<arg>OrangeHRM</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2024-05-23T11:59:36.642279" elapsed="0.005891"/>
+</kw>
+<status status="PASS" start="2024-05-23T11:59:33.873244" elapsed="2.775072"/>
+</kw>
+<status status="PASS" start="2024-05-23T11:59:33.871659" elapsed="2.776928"/>
+</test>
+<test id="s1-s1-s1-t6" name="Test6: Check Forgot Password and Email Message Sent" line="21">
+<kw name="Check Forgot Password" owner="kw_login">
+<kw name="Reload" owner="Browser">
+<msg time="2024-05-23T11:59:37.068152" level="INFO">Reloaded page</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Reloads current active page.</doc>
+<status status="PASS" start="2024-05-23T11:59:36.654790" elapsed="0.413637"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-05-23T11:59:37.069835" level="INFO">Clicks the element '//*[@class="oxd-text oxd-text--p orangehrm-login-forgot-header"]'.</msg>
+<arg>${forgot_password}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:37.068881" elapsed="0.785087"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2024-05-23T11:59:38.232416" level="INFO">Text: 'Reset Password'</msg>
+<msg time="2024-05-23T11:59:38.232611" level="INFO">${msg} = Reset Password</msg>
+<var>${msg}</var>
+<arg>${reset_password}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:37.854444" elapsed="0.378195"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${msg}</arg>
+<arg>${reset_password_msg}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-05-23T11:59:38.232889" elapsed="0.000301"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2024-05-23T11:59:38.233602" level="INFO">${random_username} = gkbedLPA</msg>
+<var>${random_username}</var>
+<arg>length=8</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2024-05-23T11:59:38.233360" elapsed="0.000267"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-05-23T11:59:38.234192" level="INFO">Fills the text 'gkbedLPA' in the given field.</msg>
+<arg>${username}</arg>
+<arg>${random_username}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:38.233749" elapsed="0.022537"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-05-23T11:59:38.257752" level="INFO">Clicks the element 'button[type="submit"]'.</msg>
+<arg>${bt_submit}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:38.256943" elapsed="0.815292"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2024-05-23T11:59:39.990371" level="INFO">Text: 'A reset password link has been sent to you via email.'</msg>
+<msg time="2024-05-23T11:59:39.990662" level="INFO">${msg} = A reset password link has been sent to you via email.</msg>
+<var>${msg}</var>
+<arg>${reset_password_1}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:39.072619" elapsed="0.918101"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${msg}</arg>
+<arg>${reset_password_msg_1}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-05-23T11:59:39.991198" elapsed="0.000278"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2024-05-23T11:59:40.017591" level="INFO">Text: 'You can follow that link and select a new password.'</msg>
+<msg time="2024-05-23T11:59:40.017801" level="INFO">${msg} = You can follow that link and select a new password.</msg>
+<var>${msg}</var>
+<arg>${reset_password_2}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:39.991613" elapsed="0.026218"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${msg}</arg>
+<arg>${reset_password_msg_2}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-05-23T11:59:40.018138" elapsed="0.000285"/>
+</kw>
+<kw name="Get Text" owner="Browser">
+<msg time="2024-05-23T11:59:40.042243" level="INFO">Text: 'If the email does not arrive, please contact your OrangeHRM Administrator.'</msg>
+<msg time="2024-05-23T11:59:40.042542" level="INFO">${msg} = If the email does not arrive, please contact your OrangeHRM Administrator.</msg>
+<var>${msg}</var>
+<arg>${reset_password_3}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:40.018562" elapsed="0.024012"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${msg}</arg>
+<arg>${reset_password_msg_3}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-05-23T11:59:40.042845" elapsed="0.000283"/>
+</kw>
+<kw name="Go To" owner="Browser">
+<msg time="2024-05-23T11:59:40.451013" level="INFO">Successfully opened URL https://opensource-demo.orangehrmlive.com/web/index.php/auth/login</msg>
+<arg>https://opensource-demo.orangehrmlive.com/web/index.php/auth/login</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Navigates to the given ``url``.</doc>
+<status status="PASS" start="2024-05-23T11:59:40.043395" elapsed="0.408502"/>
+</kw>
+<status status="PASS" start="2024-05-23T11:59:36.654095" elapsed="3.798052"/>
+</kw>
+<status status="PASS" start="2024-05-23T11:59:36.652624" elapsed="3.799943"/>
+</test>
+<test id="s1-s1-s1-t7" name="Test7: Login as Admin" line="24">
+<kw name="Login With the User Admin" owner="kw_login">
+<kw name="Reload" owner="Browser">
+<msg time="2024-05-23T11:59:40.895936" level="INFO">Reloaded page</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Reloads current active page.</doc>
+<status status="PASS" start="2024-05-23T11:59:40.458856" elapsed="0.437523"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-05-23T11:59:40.897535" level="INFO">Fills the text 'Admin' in the given field.</msg>
+<arg>${username}</arg>
+<arg>${ADMIN_USERNAME}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:40.896815" elapsed="0.890145"/>
+</kw>
+<kw name="Fill Text" owner="Browser">
+<msg time="2024-05-23T11:59:41.787977" level="INFO">Fills the text 'admin123' in the given field.</msg>
+<arg>${password}</arg>
+<arg>${ADMIN_PASSWORD}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:41.787323" elapsed="0.025195"/>
+</kw>
+<kw name="Click" owner="Browser">
+<msg time="2024-05-23T11:59:41.814045" level="INFO">Clicks the element 'button[type="submit"]'.</msg>
+<arg>${bt_submit}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:41.812926" elapsed="1.155161"/>
+</kw>
+<kw name="Get Element" owner="Browser">
+<msg time="2024-05-23T11:59:43.818819" level="INFO">Locator found successfully.</msg>
+<arg>${profile_photo}</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="PASS" start="2024-05-23T11:59:42.968385" elapsed="0.850823"/>
+</kw>
+<status status="PASS" start="2024-05-23T11:59:40.458244" elapsed="3.361220"/>
+</kw>
+<status status="PASS" start="2024-05-23T11:59:40.457399" elapsed="3.362550"/>
+</test>
+<status status="PASS" start="2024-05-23T11:59:23.994309" elapsed="19.833010"/>
+</suite>
+<suite id="s1-s1-s2" name="8 - Dashboard" source="/opt/robotframework/tests/test plan/8 - dashboard.robot">
+<kw name="Get Element" owner="Browser" type="SETUP">
+<msg time="2024-05-23T11:59:43.916273" level="INFO">Locator found successfully.</msg>
+<arg>${profile_photo}</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<status status="PASS" start="2024-05-23T11:59:43.906845" elapsed="0.010047"/>
+</kw>
+<test id="s1-s1-s2-t1" name="Test1: Check If the main seven dashboards exists" line="7">
+<kw name="Check If Dashboard Time at Work exists" owner="kw_dashboard" source_name="Check If Dashboard ${dashboard_name} exists">
+<kw name="Click" owner="Browser">
+<msg time="2024-05-23T11:59:43.923497" level="INFO">Clicks the element '//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name' and text()='Dashboard']'.</msg>
+<arg>//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name' and text()='Dashboard']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:43.922254" elapsed="0.612929"/>
+</kw>
+<kw name="Get Element States" owner="Browser">
+<msg time="2024-05-23T11:59:45.011731" level="INFO">States are: ['attached', 'visible', 'enabled', 'editable', 'defocused']</msg>
+<arg>//*[@class="oxd-text oxd-text--p" and text()="${dashboard_name}"]</arg>
+<arg>validate</arg>
+<arg>value &amp; visible</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:44.535499" elapsed="0.476525"/>
+</kw>
+<status status="PASS" start="2024-05-23T11:59:43.920738" elapsed="1.091769"/>
+</kw>
+<kw name="Check If Dashboard My Actions exists" owner="kw_dashboard" source_name="Check If Dashboard ${dashboard_name} exists">
+<kw name="Click" owner="Browser">
+<msg time="2024-05-23T11:59:45.016293" level="INFO">Clicks the element '//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name' and text()='Dashboard']'.</msg>
+<arg>//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name' and text()='Dashboard']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:45.015124" elapsed="0.852091"/>
+</kw>
+<kw name="Get Element States" owner="Browser">
+<msg time="2024-05-23T11:59:46.331482" level="INFO">States are: ['attached', 'visible', 'enabled', 'editable', 'defocused']</msg>
+<arg>//*[@class="oxd-text oxd-text--p" and text()="${dashboard_name}"]</arg>
+<arg>validate</arg>
+<arg>value &amp; visible</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:45.867883" elapsed="0.463782"/>
+</kw>
+<status status="PASS" start="2024-05-23T11:59:45.013607" elapsed="1.318242"/>
+</kw>
+<kw name="Check If Dashboard Quick Launch exists" owner="kw_dashboard" source_name="Check If Dashboard ${dashboard_name} exists">
+<kw name="Click" owner="Browser">
+<msg time="2024-05-23T11:59:46.335185" level="INFO">Clicks the element '//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name' and text()='Dashboard']'.</msg>
+<arg>//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name' and text()='Dashboard']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:46.333950" elapsed="1.093258"/>
+</kw>
+<kw name="Get Element States" owner="Browser">
+<msg time="2024-05-23T11:59:47.876721" level="INFO">States are: ['attached', 'visible', 'enabled', 'editable', 'defocused']</msg>
+<arg>//*[@class="oxd-text oxd-text--p" and text()="${dashboard_name}"]</arg>
+<arg>validate</arg>
+<arg>value &amp; visible</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:47.427563" elapsed="0.449321"/>
+</kw>
+<status status="PASS" start="2024-05-23T11:59:46.332806" elapsed="1.544287"/>
+</kw>
+<kw name="Check If Dashboard Buzz Latest Posts exists" owner="kw_dashboard" source_name="Check If Dashboard ${dashboard_name} exists">
+<kw name="Click" owner="Browser">
+<msg time="2024-05-23T11:59:47.878525" level="INFO">Clicks the element '//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name' and text()='Dashboard']'.</msg>
+<arg>//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name' and text()='Dashboard']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:47.877948" elapsed="1.000795"/>
+</kw>
+<kw name="Get Element States" owner="Browser">
+<msg time="2024-05-23T11:59:49.356495" level="INFO">States are: ['attached', 'visible', 'enabled', 'editable', 'defocused']</msg>
+<arg>//*[@class="oxd-text oxd-text--p" and text()="${dashboard_name}"]</arg>
+<arg>validate</arg>
+<arg>value &amp; visible</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:48.879121" elapsed="0.477599"/>
+</kw>
+<status status="PASS" start="2024-05-23T11:59:47.877493" elapsed="1.479428"/>
+</kw>
+<kw name="Check If Dashboard Employees on Leave Today exists" owner="kw_dashboard" source_name="Check If Dashboard ${dashboard_name} exists">
+<kw name="Click" owner="Browser">
+<msg time="2024-05-23T11:59:49.361101" level="INFO">Clicks the element '//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name' and text()='Dashboard']'.</msg>
+<arg>//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name' and text()='Dashboard']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:49.359855" elapsed="1.094406"/>
+</kw>
+<kw name="Get Element States" owner="Browser">
+<msg time="2024-05-23T11:59:50.900510" level="INFO">States are: ['attached', 'visible', 'enabled', 'editable', 'defocused']</msg>
+<arg>//*[@class="oxd-text oxd-text--p" and text()="${dashboard_name}"]</arg>
+<arg>validate</arg>
+<arg>value &amp; visible</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:50.454753" elapsed="0.445958"/>
+</kw>
+<status status="PASS" start="2024-05-23T11:59:49.358597" elapsed="1.542322"/>
+</kw>
+<kw name="Check If Dashboard Employee Distribution by Sub Unit exists" owner="kw_dashboard" source_name="Check If Dashboard ${dashboard_name} exists">
+<kw name="Click" owner="Browser">
+<msg time="2024-05-23T11:59:50.904409" level="INFO">Clicks the element '//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name' and text()='Dashboard']'.</msg>
+<arg>//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name' and text()='Dashboard']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:50.902372" elapsed="0.908894"/>
+</kw>
+<kw name="Get Element States" owner="Browser">
+<msg time="2024-05-23T11:59:52.273587" level="INFO">States are: ['attached', 'visible', 'enabled', 'editable', 'defocused']</msg>
+<arg>//*[@class="oxd-text oxd-text--p" and text()="${dashboard_name}"]</arg>
+<arg>validate</arg>
+<arg>value &amp; visible</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:51.811758" elapsed="0.462019"/>
+</kw>
+<status status="PASS" start="2024-05-23T11:59:50.901530" elapsed="1.372434"/>
+</kw>
+<kw name="Check If Dashboard Employee Distribution by Location exists" owner="kw_dashboard" source_name="Check If Dashboard ${dashboard_name} exists">
+<kw name="Click" owner="Browser">
+<msg time="2024-05-23T11:59:52.278083" level="INFO">Clicks the element '//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name' and text()='Dashboard']'.</msg>
+<arg>//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name' and text()='Dashboard']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:52.276447" elapsed="0.964900"/>
+</kw>
+<kw name="Get Element States" owner="Browser">
+<msg time="2024-05-23T11:59:53.743423" level="INFO">States are: ['attached', 'visible', 'enabled', 'editable', 'defocused']</msg>
+<arg>//*[@class="oxd-text oxd-text--p" and text()="${dashboard_name}"]</arg>
+<arg>validate</arg>
+<arg>value &amp; visible</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Get the active states from the element found by ``selector``.</doc>
+<status status="PASS" start="2024-05-23T11:59:53.241782" elapsed="0.501876"/>
+</kw>
+<status status="PASS" start="2024-05-23T11:59:52.274467" elapsed="1.469379"/>
+</kw>
+<status status="PASS" start="2024-05-23T11:59:43.917486" elapsed="9.826735"/>
+</test>
+<kw name="Close Browser" owner="Browser" type="TEARDOWN">
+<msg time="2024-05-23T11:59:53.957067" level="INFO">Closed browser</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-23T11:59:53.750874" elapsed="0.206466"/>
+</kw>
+<status status="PASS" start="2024-05-23T11:59:43.834202" elapsed="10.123239"/>
+</suite>
+<status status="PASS" start="2024-05-23T11:59:23.991521" elapsed="29.972868"/>
+</suite>
+<status status="PASS" start="2024-05-23T11:59:23.967798" elapsed="29.997689"/>
+</suite>
+<statistics>
+<total>
+<stat pass="8" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="8" fail="0" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="8" fail="0" skip="0" id="s1-s1" name="Test Plan">Tests.Test Plan</stat>
+<stat pass="7" fail="0" skip="0" id="s1-s1-s1" name="1 - Pipeline Login">Tests.Test Plan.1 - Pipeline Login</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s2" name="8 - Dashboard">Tests.Test Plan.8 - Dashboard</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
